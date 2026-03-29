@@ -83,6 +83,10 @@
             color: #003366;
             border-bottom: 2px solid #00a86b;
             padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        .smartai-section h2:first-child {
             margin-top: 0;
         }
 
@@ -116,6 +120,32 @@
         .smartai-fact-item { flex: 1; min-width: 150px; }
         .smartai-fact-item strong { display: block; color: #003366; }
 
+        /* Стилі для списку партнерів */
+        .smartai-partners {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .smartai-partners li {
+            background: #f4f7f6;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #00a86b;
+        }
+
+        .smartai-partners li.coordinator {
+            background: #e6f2f5;
+            border-left-color: #003366;
+        }
+
+        .smartai-partners li strong {
+            color: #003366;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         .smartai-footer {
             margin-top: 20px;
             padding: 20px;
@@ -148,6 +178,7 @@
             .smartai-header h1 { font-size: 1.8em; }
             .smartai-facts { flex-direction: column; }
             .smartai-lang-switch { top: 10px; right: 10px; }
+            .smartai-footer { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -160,8 +191,8 @@
             <button class="smartai-lang-btn" onclick="switchLanguage('en')">EN</button>
         </div>
         
-        <img src="smartai-logo.png" alt="SMarTAI Project Logo" class="smartai-logo">
         <img src="NUOMA_LOGO.png" alt="SMarTAI Project Logo" class="smartai-logo">
+        <img src="smartai-logo.png" alt="SMarTAI Project Logo" class="smartai-logo">
         
         <h1><span class="lang-uk">Проєкт SMarTAI</span><span class="lang-en">SMarTAI Project</span></h1>
         <p>Sustainable Maritime Transport Artificial Intelligence</p>
@@ -212,6 +243,58 @@
                 <p class="lang-en">Foster long-term partnerships between universities, industry and public authorities to improve employability and innovation.</p>
             </div>
         </div>
+
+        <h2><span class="lang-uk">Учасники проєкту</span><span class="lang-en">Project Partners</span></h2>
+        <ul class="smartai-partners">
+            <li class="coordinator">
+                <strong>
+                    <span class="lang-uk">Університет Егейського моря (University of the Aegean — UAEGEAN), Греція</span>
+                    <span class="lang-en">University of the Aegean (UAEGEAN / PANEPISTIMIO AIGAIOU), Greece</span>
+                </strong>
+                <span class="lang-uk">Координатор (головний партнер) проєкту, який керує консорціумом та представляє його перед Європейською Комісією.</span>
+                <span class="lang-en">The coordinator (lead partner) of the project, managing the consortium and representing it to the European Commission.</span>
+            </li>
+            <li>
+                <strong>
+                    <span class="lang-uk">Клайпедський університет (Klaipeda University — KU), Литва</span>
+                    <span class="lang-en">Klaipeda University (KU / KLAIPEDOS UNIVERSITETAS), Lithuania</span>
+                </strong>
+                <span class="lang-uk">Партнер проєкту.</span>
+                <span class="lang-en">Project partner.</span>
+            </li>
+            <li>
+                <strong>
+                    <span class="lang-uk">Херсонська державна морська академія (KSMA), Україна</span>
+                    <span class="lang-en">Kherson State Maritime Academy (KSMA), Ukraine</span>
+                </strong>
+                <span class="lang-uk">Партнер проєкту.</span>
+                <span class="lang-en">Project partner.</span>
+            </li>
+            <li>
+                <strong>
+                    <span class="lang-uk">Національний університет «Одеська морська академія» (NUOMA), Україна</span>
+                    <span class="lang-en">National University "Odessa Maritime Academy" (NUOMA), Ukraine</span>
+                </strong>
+                <span class="lang-uk">Партнер проєкту.</span>
+                <span class="lang-en">Project partner.</span>
+            </li>
+            <li>
+                <strong>
+                    <span class="lang-uk">Creative Thinking Development (CRETHIDEV), Греція</span>
+                    <span class="lang-en">Creative Thinking Development (DIMIOURGIKI SKEPSI ANAPTYXIS — CRETHIDEV), Greece</span>
+                </strong>
+                <span class="lang-uk">Неурядова організація, що виступає партнером та відповідає за управління якістю проєкту.</span>
+                <span class="lang-en">Non-governmental organization acting as a partner and responsible for project quality management.</span>
+            </li>
+            <li>
+                <strong>
+                    <span class="lang-uk">Херсонський морський спеціалізований тренажерний центр (KMSTC), Україна</span>
+                    <span class="lang-en">Kherson Maritime Specialized Training Centre (KMSTC), Ukraine</span>
+                </strong>
+                <span class="lang-uk">Партнер проєкту.</span>
+                <span class="lang-en">Project partner.</span>
+            </li>
+        </ul>
 
         <a href="https://smartai-project.eu/" target="_blank" class="smartai-btn">
             <span class="lang-uk">Офіційний сайт проєкту SMarTAI →</span>
