@@ -26,6 +26,7 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 5px;
             border-radius: 20px;
+            z-index: 10;
         }
 
         .smartai-lang-btn {
@@ -51,22 +52,47 @@
 
         .smartai-header {
             text-align: center;
-            padding: 50px 20px 40px;
+            padding: 60px 20px 40px;
             background: linear-gradient(135deg, #003366 0%, #005b96 100%);
             color: white;
             border-radius: 8px 8px 0 0;
             position: relative;
         }
 
-        /* Стилі для головного логотипа проєкту */
+        /* Контейнер для логотипів та назви */
+        .smartai-logos-row {
+            display: flex;
+            justify-content: center; /* Центрування всього блоку по горизонталі */
+            align-items: center; /* Вертикальне центрування елементів у рядку */
+            gap: 30px; /* Відстань між групою академії та логотипом проєкту */
+            margin-bottom: 25px;
+            flex-wrap: wrap; /* Для мобільних пристроїв */
+        }
+
+        /* Група лого академії + назва */
+        .smartai-academy-group {
+            display: flex;
+            align-items: center; /* Вертикальне центрування лого та тексту */
+            gap: 15px; /* Відстань між логотипом та текстом */
+            text-align: left; /* Текст всередині групи вирівняний по лівому краю */
+        }
+
         .smartai-logo {
-            max-height: 90px;
+            max-height: 80px;
             width: auto;
-            margin: 0 auto 15px auto;
             display: block;
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 8px;
+        }
+
+        /* Стиль для назви академії поруч із лого */
+        .smartai-academy-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            line-height: 1.3;
+            color: white;
+            max-width: 300px; /* Щоб текст не розтягувався занадто сильно */
         }
 
         .smartai-header h1 { margin: 0 0 10px 0; font-size: 2.2em; }
@@ -86,9 +112,7 @@
             margin-top: 30px;
         }
         
-        .smartai-section h2:first-child {
-            margin-top: 0;
-        }
+        .smartai-section h2:first-child { margin-top: 0; }
 
         .smartai-grid {
             display: grid;
@@ -120,7 +144,6 @@
         .smartai-fact-item { flex: 1; min-width: 150px; }
         .smartai-fact-item strong { display: block; color: #003366; }
 
-        /* Стилі для списку партнерів */
         .smartai-partners {
             list-style: none;
             padding: 0;
@@ -171,7 +194,6 @@
 
         .smartai-btn:hover { background-color: #008f5a; }
 
-        /* Приховуємо елементи іншої мови за замовчуванням */
         .lang-en { display: none; }
 
         @media (max-width: 600px) {
@@ -179,6 +201,8 @@
             .smartai-facts { flex-direction: column; }
             .smartai-lang-switch { top: 10px; right: 10px; }
             .smartai-footer { flex-direction: column; text-align: center; }
+            .smartai-academy-group { flex-direction: column; text-align: center; gap: 5px; }
+            .smartai-logos-row { gap: 15px; }
         }
     </style>
 </head>
@@ -187,12 +211,20 @@
 <div class="smartai-container">
     <div class="smartai-header">
         <div class="smartai-lang-switch">
-            <button class="smartai-lang-btn active" onclick="switchLanguage('uk')">UA</button>
-            <button class="smartai-lang-btn" onclick="switchLanguage('en')">EN</button>
+            <button class="smartai-lang-btn active" onclick="switchLanguage('uk', this)">UA</button>
+            <button class="smartai-lang-btn" onclick="switchLanguage('en', this)">EN</button>
         </div>
         
-        <img src="NUOMA_LOGO.png" alt="SMarTAI Project Logo" class="smartai-logo">
-        <img src="smartai-logo.png" alt="SMarTAI Project Logo" class="smartai-logo">
+        <div class="smartai-logos-row">
+            <div class="smartai-academy-group">
+                <img src="nuoma_ukr.jpg" alt="Academy Logo" class="smartai-logo" id="academy-logo">
+                <div class="smartai-academy-text">
+                    <span class="lang-uk">Національний університет<br>«Одеська морська академія»</span>
+                    <span class="lang-en">National University<br>«Odessa Maritime Academy»</span>
+                </div>
+            </div>
+            <img src="smartai-logo.png" alt="SMarTAI Project Logo" class="smartai-logo">
+        </div>
         
         <h1><span class="lang-uk">Проєкт SMarTAI</span><span class="lang-en">SMarTAI Project</span></h1>
         <p>Sustainable Maritime Transport Artificial Intelligence</p>
@@ -229,7 +261,7 @@
             </div>
             <div class="smartai-card">
                 <h3>💻 <span class="lang-uk">Цифрові навички</span><span class="lang-en">Boost digital skills</span></h3>
-                <p class="lang-uk">Розробка професійних онлайн-курсів та інтерактивних VR-тренажерів для підвищення кваліфікації студентів і викладачів.</p>
+                <p class="lang-uk">Разробка професійних онлайн-курсів та інтерактивних VR-тренажерів для підвищення кваліфікації студентів і викладачів.</p>
                 <p class="lang-en">Develop online professional courses and interactive learning resources to enhance digital competences of students and staff.</p>
             </div>
             <div class="smartai-card">
@@ -281,10 +313,10 @@
             <li>
                 <strong>
                     <span class="lang-uk">Creative Thinking Development (CRETHIDEV), Греція</span>
-                    <span class="lang-en">Creative Thinking Development (DIMIOURGIKI SKEPSI ANAPTYXIS — CRETHIDEV), Greece</span>
+                    <span class="lang-en">Creative Thinking Development (CRETHIDEV), Greece</span>
                 </strong>
-                <span class="lang-uk">Неурядова організація, що виступає партнером та відповідає за управління якістю проєкту.</span>
-                <span class="lang-en">Non-governmental organization acting as a partner and responsible for project quality management.</span>
+                <span class="lang-uk">Неурядова організація, що відповідає за управління якістю проєкту.</span>
+                <span class="lang-en">Non-governmental organization responsible for project quality management.</span>
             </li>
             <li>
                 <strong>
@@ -306,31 +338,39 @@
         <img src="https://smartai-project.eu/wp-content/uploads/2024/01/EN_Co-fundedbytheEU_RGB_POS.png" alt="Co-funded by the EU" style="height: 50px;" onerror="this.style.display='none'">
         <div>
             <strong><span class="lang-uk">Фінансується Європейським Союзом.</span><span class="lang-en">Co-funded by the European Union.</span></strong><br>
-            <span class="lang-uk">Погляди та думки висловлені виключно авторами і не обов'язково відображають позицію Європейського Союзу або EACEA. Ні Європейський Союз, ні EACEA не несуть за них відповідальності.</span>
-            <span class="lang-en">Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.</span>
+            <span class="lang-uk">Погляди та думки висловлені виключно авторами і не обов'язково відображають позицію Європейського Союзу або EACEA.</span>
+            <span class="lang-en">Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or EACEA.</span>
         </div>
     </div>
 </div>
 
 <script>
-    function switchLanguage(lang) {
-        // Прибираємо активний клас у всіх кнопок
-        document.querySelectorAll('.smartai-lang-btn').forEach(btn => btn.classList.remove('active'));
-        
-        // Додаємо активний клас натиснутій кнопці
-        event.target.classList.add('active');
+    function switchLanguage(lang, btn) {
+        // Зміна активної кнопки
+        document.querySelectorAll('.smartai-lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const academyLogo = document.getElementById('academy-logo');
 
         if (lang === 'en') {
-            // Показуємо англійську, приховуємо українську
+            // Зміна логотипа на англійський
+            academyLogo.src = 'nuoma_eng.png';
+            
+            // Відображення тексту
             document.querySelectorAll('.lang-uk').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'inline-block');
-            // Для блочних елементів, щоб не ламалася верстка
-            document.querySelectorAll('p.lang-en, div.lang-en').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.lang-en').forEach(el => {
+                // SPAN - для inline, DIV/P - для block
+                el.style.display = (el.tagName === 'SPAN' || el.tagName === 'STRONG' || el.tagName === 'BR') ? 'inline-block' : 'block';
+            });
         } else {
-            // Показуємо українську, приховуємо англійську
+            // Зміна логотипа на український
+            academyLogo.src = 'nuoma_ukr.jpg';
+            
+            // Відображення тексту
             document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-uk').forEach(el => el.style.display = 'inline-block');
-            document.querySelectorAll('p.lang-uk, div.lang-uk').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.lang-uk').forEach(el => {
+                el.style.display = (el.tagName === 'SPAN' || el.tagName === 'STRONG' || el.tagName === 'BR') ? 'inline-block' : 'block';
+            });
         }
     }
 </script>
