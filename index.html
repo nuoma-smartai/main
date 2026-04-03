@@ -301,7 +301,6 @@
         /* Список партнерів */
         .smartai-partners { list-style: none; padding: 0; margin-top: 25px; }
         .smartai-partners li {
-            padding: 18px 25px;
             margin-bottom: 12px;
             background: #fff;
             border-radius: 12px;
@@ -309,8 +308,18 @@
             transition: var(--transition);
             position: relative; /* Для правильного розміщення посилань всередині */
         }
-        .smartai-partners li:hover { border-left: 6px solid var(--secondary); padding-left: 30px; background: #fafafa; }
+        .smartai-partners li:hover { border-left: 6px solid var(--secondary); background: #fafafa; }
         .smartai-partners li.coordinator { background: #f0f7ff; border-left: 6px solid var(--primary); }
+        
+        /* Стилі для посилань всередині карток партнерів */
+        .smartai-partners a {
+            display: block;
+            padding: 18px 25px;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 12px;
+        }
+        .smartai-partners li:hover a { padding-left: 30px; }
 
         .smartai-btn {
             display: inline-block;
@@ -478,18 +487,36 @@
         <h2><span class="lang-uk">🤝 Консорціум партнерів</span><span class="lang-en">🤝 Partners Consortium</span></h2>
         <ul class="smartai-partners">
             <li class="coordinator">
-                <strong><span class="lang-uk">Університет Егейського моря, Греція (Координатор)</span><span class="lang-en">University of the Aegean, Greece (Coordinator)</span></strong>
-                <small>UAEGEAN / PANEPISTIMIO AIGAIOU</small>
+                <a href="https://www.aegean.gr" target="_blank">
+                    <strong><span class="lang-uk">Університет Егейського моря, Греція (Координатор) 🔗</span><span class="lang-en">University of the Aegean, Greece (Coordinator) 🔗</span></strong>
+                    <br><small>UAEGEAN / PANEPISTIMIO AIGAIOU</small>
+                </a>
             </li>
-            <li><strong><span class="lang-uk">Клайпедський університет, Литва</span><span class="lang-en">Klaipeda University, Lithuania</span></strong></li>
-            <li><strong><span class="lang-uk">Херсонська державна морська академія, Україна</span><span class="lang-en">Kherson State Maritime Academy, Ukraine</span></strong></li>
             <li>
-                <a href="http://onma.edu.ua" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                <a href="https://www.ku.lt" target="_blank">
+                    <strong><span class="lang-uk">Клайпедський університет, Литва 🔗</span><span class="lang-en">Klaipeda University, Lithuania 🔗</span></strong>
+                </a>
+            </li>
+            <li>
+                <a href="https://ksma.ks.ua" target="_blank">
+                    <strong><span class="lang-uk">Херсонська державна морська академія, Україна 🔗</span><span class="lang-en">Kherson State Maritime Academy, Ukraine 🔗</span></strong>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.onma.edu.ua" target="_blank">
                     <strong><span class="lang-uk">НУ «Одеська морська академія», Україна 🔗</span><span class="lang-en">NU "Odessa Maritime Academy", Ukraine 🔗</span></strong>
                 </a>
             </li>
-            <li><strong>CRETHIDEV, Greece</strong> | Quality Management</li>
-            <li><strong>KMSTC, Ukraine</strong> | Training Centre</li>
+            <li>
+                <a href="https://www.crethidev.gr" target="_blank">
+                    <strong>CRETHIDEV, Greece 🔗</strong> | Quality Management
+                </a>
+            </li>
+            <li>
+                <a href="https://kmstc.org" target="_blank">
+                    <strong>KMSTC, Ukraine 🔗</strong> | Training Centre
+                </a>
+            </li>
         </ul>
 
         <div style="text-align:center;">
